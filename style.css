@@ -1,0 +1,116 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1d1f23;
+  --muted: #5f6670;
+  --line: #e6e8eb;
+  --accent: #b31b1b; /* Cornell carnelian */
+  --card: #f7f8f9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121316;
+    --fg: #e8e9ec;
+    --muted: #9aa1ab;
+    --line: #2a2d33;
+    --accent: #ef6b6b;
+    --card: #1a1c20;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+/* nav */
+.topnav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.brand { color: var(--fg); font-weight: 600; }
+.nav-links a { color: var(--muted); margin-left: 22px; font-size: 15px; }
+.nav-links a:hover { color: var(--fg); text-decoration: none; }
+
+/* intro */
+.intro {
+  display: grid; grid-template-columns: 1fr 220px; gap: 40px;
+  align-items: center; padding: 56px 0 40px;
+}
+h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 40px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.01em;
+}
+.role { color: var(--muted); margin: 0 0 18px; font-weight: 500; }
+.intro p { margin: 0 0 14px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px !important; font-weight: 500; }
+.intro-photo img, .photo-placeholder {
+  width: 220px; height: 220px; border-radius: 50%; object-fit: cover; display: block;
+}
+.photo-placeholder {
+  display: grid; place-items: center;
+  background: var(--card); border: 2px dashed var(--line); color: var(--muted);
+}
+
+/* sections */
+section { padding-top: 16px; }
+h2 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 26px; margin: 0 0 8px; padding-top: 24px; border-top: 1px solid var(--line);
+}
+.section-lede { color: var(--muted); margin: 0 0 24px; }
+.note { font-size: 14px; }
+
+/* publications */
+.pub {
+  display: grid; grid-template-columns: 220px 1fr; gap: 24px;
+  padding: 20px 0; border-bottom: 1px solid var(--line);
+}
+.pub:last-child { border-bottom: 0; }
+.pub-thumb {
+  display: block; aspect-ratio: 16 / 10; border-radius: 10px; overflow: hidden;
+  background: #fff; border: 1px solid var(--line);
+}
+.pub-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.pub-thumb:hover img { transform: scale(1.04); }
+.pub h3 { font-size: 17px; line-height: 1.35; margin: 0 0 6px; font-weight: 600; }
+.pub h3 a { color: var(--fg); }
+.pub h3 a:hover { color: var(--accent); text-decoration: none; }
+.authors { margin: 0; font-size: 14.5px; color: var(--muted); }
+.authors strong { color: var(--fg); font-weight: 600; }
+.venue { margin: 2px 0 6px; font-size: 14.5px; font-style: italic; }
+.badge {
+  font-style: normal; font-size: 12px; font-weight: 600; color: var(--accent);
+  border: 1px solid currentColor; border-radius: 99px; padding: 0 8px; margin-left: 6px;
+}
+.links-row { margin: 0 0 6px; font-size: 14.5px; }
+.links-row a + a::before { content: "/"; color: var(--line); margin: 0 8px; }
+.blurb { margin: 0; font-size: 15px; }
+
+.footer { color: var(--muted); font-size: 14px; padding: 32px 20px 48px; }
+
+@media (max-width: 680px) {
+  .intro { grid-template-columns: 1fr; padding-top: 32px; gap: 24px; }
+  .intro-photo { order: -1; }
+  .intro-photo img, .photo-placeholder { width: 140px; height: 140px; }
+  .pub { grid-template-columns: 1fr; gap: 14px; }
+  .nav-links a { margin-left: 14px; }
+}
+
+/* fallback when a thumbnail can't load */
+.pub-thumb.noimg {
+  display: grid; place-items: center; background: var(--card);
+  color: var(--muted); font-size: 13px; font-weight: 500;
+}
+.pub-thumb.noimg::after { content: "Project preview"; }
