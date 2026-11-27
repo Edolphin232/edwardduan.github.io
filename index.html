@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edward Duan</title>
+  <meta name="description" content="Edward Duan — robotics and machine learning research at Cornell University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#">Edward Duan</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- ===== Intro ===== -->
+    <section id="about" class="intro">
+      <div class="intro-text">
+        <h1>Edward Duan</h1>
+        <p class="role">Robotics &amp; Machine Learning · Cornell University</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.
+        </p>
+        <!-- TODO: replace # with real links -->
+        <p class="links" id="contact">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="#">Résumé</a>
+          <a href="#">Google Scholar</a>
+          <a href="https://github.com/Edolphin232">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </p>
+      </div>
+      <div class="intro-photo">
+        <!-- TODO: add images/profile.jpg and swap this placeholder for:
+             <img src="images/profile.jpg" alt="Edward Duan"> -->
+        <div class="photo-placeholder" aria-label="Profile photo placeholder">Photo</div>
+      </div>
+    </section>
+
+    <!-- ===== Research ===== -->
+    <section id="research">
+      <h2>Research</h2>
+      <p class="section-lede">
+        I work on robot learning: teaching robots from human video, cross-embodiment
+        policies, and understanding what vision-language-action models represent.
+        <span class="note">(* equal contribution)</span>
+      </p>
+
+      <article class="pub">
+        <a class="pub-thumb" href="https://praxis-cornell.github.io/vla-probing.github.io/">
+          <img src="https://praxis-cornell.github.io/vla-probing.github.io/assets/figures/Overview.svg?v=2" alt="VLA probing overview" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()">
+        </a>
+        <div class="pub-body">
+          <h3><a href="https://praxis-cornell.github.io/vla-probing.github.io/">Decoding Task Progress from VLA Representations</a></h3>
+          <p class="authors">Atiksh Bhardwaj*, <strong>Edward Duan*</strong>, Prithwish Dan, Wei-Chiu Ma, Preston Culbertson</p>
+          <p class="venue">Rethinking Safety Workshop @ RSS 2026</p>
+          <p class="links-row">
+            <a href="https://praxis-cornell.github.io/vla-probing.github.io/">project page</a>
+            <a href="https://arxiv.org/abs/2608.13474">arXiv</a>
+          </p>
+          <p class="blurb">Task progress is linearly decodable from the residual stream of π<sub>0.5</sub>, and the probe doubles as a label-free detector for out-of-distribution failures.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <a class="pub-thumb" href="https://portal-cornell.github.io/X-Diffusion/">
+          <img src="https://portal-cornell.github.io/X-Diffusion/X-Diffusion_preview.png" alt="X-Diffusion preview" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()">
+        </a>
+        <div class="pub-body">
+          <h3><a href="https://portal-cornell.github.io/X-Diffusion/">X-Diffusion: Training Diffusion Policies on Cross-Embodiment Human Demonstrations</a></h3>
+          <p class="authors">Maximus A. Pace*, Prithwish Dan*, Chuanruo Ning, Atiksh Bhardwaj, Audrey Du, <strong>Edward W. Duan</strong>, Wei-Chiu Ma, Kushal Kedia</p>
+          <p class="venue">ICRA 2026</p>
+          <p class="links-row">
+            <a href="https://portal-cornell.github.io/X-Diffusion/">project page</a>
+            <a href="https://arxiv.org/abs/2511.04671">arXiv</a>
+            <a href="https://github.com/portal-cornell/X-Diffusion">code</a>
+            <a href="https://huggingface.co/datasets/map438/X-Diffusion">data</a>
+          </p>
+          <p class="blurb">Human demonstrations are noised until they are indistinguishable from robot actions, letting diffusion policies learn from human video without copying infeasible motions.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <a class="pub-thumb" href="https://portal-cornell.github.io/X-Sim/">
+          <img src="https://portal-cornell.github.io/X-Sim/static/images/xsim-coverphoto.png" alt="X-Sim cover" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()">
+        </a>
+        <div class="pub-body">
+          <h3><a href="https://portal-cornell.github.io/X-Sim/">X-Sim: Cross-Embodiment Learning via Real-to-Sim-to-Real</a></h3>
+          <p class="authors">Prithwish Dan*, Kushal Kedia*, Angela Chao, <strong>Edward W. Duan</strong>, Maximus A. Pace, Wei-Chiu Ma, Sanjiban Choudhury</p>
+          <p class="venue">CoRL 2025 <span class="badge">Oral</span></p>
+          <p class="links-row">
+            <a href="https://portal-cornell.github.io/X-Sim/">project page</a>
+            <a href="https://www.arxiv.org/abs/2505.07096">arXiv</a>
+            <a href="https://github.com/portal-cornell/X-Sim">code</a>
+          </p>
+          <p class="blurb">Robot policies learned from human RGBD videos alone, by rebuilding the scene in simulation, training with RL on object motion, and transferring back to the real world.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>© 2026 Edward Duan</p>
+  </footer>
+</body>
+</html>
